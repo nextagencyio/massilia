@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Massilia - Roman City Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      overflow: hidden;
+      background: #1a1a2e;
+      font-family: 'Press Start 2P', monospace;
+    }
+    canvas#game-canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+    #hud {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 16px;
+      color: #e0e0e0;
+      font-size: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      pointer-events: none;
+      z-index: 10;
+    }
+    #hud .hud-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      white-space: nowrap;
+    }
+    #hud .hud-rate {
+      font-size: 8px;
+      margin-left: 2px;
+    }
+    #build-menu {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 8px 12px;
+      background: rgba(0, 0, 0, 0.75);
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      z-index: 10;
+    }
+    #build-menu button {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      padding: 8px 12px;
+      background: #2a2a4a;
+      color: #c0c0c0;
+      border: 2px solid #555;
+      cursor: pointer;
+      image-rendering: pixelated;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+    }
+    #build-menu button:hover {
+      background: #3a3a6a;
+      border-color: #8a8;
+      color: #fff;
+    }
+    #build-menu button.selected {
+      background: #3a5a3a;
+      border-color: #8c8;
+      color: #fff;
+    }
+    #build-menu .build-count {
+      font-size: 7px;
+      color: #aaa;
+      margin-left: 4px;
+    }
+    #build-menu button.demolish-btn {
+      border-color: #664;
+    }
+    #build-menu button.demolish-btn:hover {
+      background: #4a2a2a;
+      border-color: #c66;
+      color: #faa;
+    }
+    #build-menu button.demolish-active {
+      background: #5a2a2a;
+      border-color: #c44;
+      color: #fcc;
+    }
+    #recenter-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      padding: 6px 10px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #aaa;
+      border: 1px solid #555;
+      cursor: pointer;
+      z-index: 11;
+    }
+    #recenter-btn:hover {
+      background: #3a3a6a;
+      color: #fff;
+      border-color: #8a8;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="game-canvas"></canvas>
+  <div id="hud"></div>
+  <button id="recenter-btn">Center (C)</button>
+  <div id="build-menu"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
