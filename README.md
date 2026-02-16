@@ -4,6 +4,8 @@ A retro/8-bit isometric Roman city builder inspired by Caesar 2 and SimCity. Bui
 
 **Play now:** [massilia-ten.vercel.app](https://massilia-ten.vercel.app)
 
+![Massilia Screenshot](game.png)
+
 ## Gameplay
 
 Build and manage a Roman colony. Place buildings to grow your population, manage resources, and defend against barbarian invasions. Control is indirect — buildings produce autonomous walkers and soldiers.
